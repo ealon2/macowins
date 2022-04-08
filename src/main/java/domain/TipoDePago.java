@@ -1,11 +1,23 @@
 package domain;
 
 public enum TipoDePago {
-    EFECTIVO,
-    TARJETA;
-    public double aplicarImpuesto(double precioNeto){
+    EFECTIVO(50),
+    TARJETA(1,50);
+
+    private double impuesto;
+    private int cuotas = 1;
+
+    TipoDePago(double impuesto){
+        this.impuesto=impuesto;
+    }
+
+    TipoDePago(int cuotas,double impuesto){
+        this.impuesto =impuesto;
+        this.cuotas = cuotas;
+    }
+
+    public double aplicarImpuesto(double precioNeto) {
         //TODO: No recuerdo como evaluar el tipoDePago seleccionado. Entiendo que el equal no lo es, pero lo dejo para revisar.
-        return
-                (this.equals(EFECTIVO)?precioNeto*0.50:precioNeto*1.10);
+        return precioNeto * cuotas * impuesto;
     }
 }

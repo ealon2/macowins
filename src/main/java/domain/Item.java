@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Item {
-    private Long cantidad;
+    private int cantidad;
     private Prenda prenda;
     private double precioBase;
     private Descuento descuento;

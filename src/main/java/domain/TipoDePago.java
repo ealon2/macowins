@@ -1,8 +1,8 @@
 package domain;
 
 public enum TipoDePago {
-    EFECTIVO(50),
-    TARJETA(1,50);
+    EFECTIVO(1),
+    TARJETA(1,0.10);
 
     private double impuesto;
     private int cuotas = 1;
